@@ -77,6 +77,10 @@ func main() {
 }
 
 func inspect(r Retriever) {
+	fmt.Println("Inspecting", r)
+	fmt.Printf(" > %T %v\n", r, r)
+	fmt.Print(" > Type switch:")
+
 	switch v := r.(type) {
 	case *mock.Retriever:
 		fmt.Println("Contents:", v.Contents)
@@ -84,5 +88,6 @@ func inspect(r Retriever) {
 		fmt.Println("UserAgent:", v.UserAgent)
 	}
 
-	fmt.Printf("%T %v\n", r, r)
+	//fmt.Printf("%T %v\n", r, r)
+	fmt.Println()
 }
