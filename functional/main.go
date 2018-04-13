@@ -1,25 +1,26 @@
 package main
 
 import (
+	"awesomeProject1/functional/fib"
 	"bufio"
 	"fmt"
 	"io"
 	"strings"
 )
 
-//1,1,2,3,5,8,13,...
-//  a,b
-//	  a,b
-//斐波那契数列
-func fibonacci() intGen {
-	a, b := 0, 1
-	return func() int {
-		a, b = b, a+b
-		return a
-	}
-}
-
 type intGen func() int
+
+////1,1,2,3,5,8,13,...
+////  a,b
+////	  a,b
+////斐波那契数列
+//func Fibonacci() intGen {
+//	a, b := 0, 1
+//	return func() int {
+//		a, b = b, a+b
+//		return a
+//	}
+//}
 
 //函数式接口
 //函数类型实现Read接口, 函数类型作为接受者
@@ -45,7 +46,7 @@ func printFileContents(reader io.Reader) {
 
 func main() {
 
-	f := fibonacci()
+	f := fib.Fibonacci()
 	//fmt.Println(f()) //1
 	//fmt.Println(f()) //1
 	//fmt.Println(f()) //2
