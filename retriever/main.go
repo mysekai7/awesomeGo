@@ -12,15 +12,43 @@ type Retriever interface {
 	Get(url string) string
 }
 
+const url = "http://www.baidu.com"
+
+type Poster interface {
+	Post(url string, form map[string]string) string
+}
+
 func download(r Retriever) string {
-	return r.Get("http://www.imooc.com")
+	return r.Get(url)
+}
+
+func post(poster Poster) {
+	poster.Post(url,
+		map[string]string{
+			"name":   "ccmouse",
+			"course": "golang",
+		})
+}
+
+//组合接口
+type RetrieverPoster interface {
+	Retriever
+	Poster
+}
+
+func session(s RetrieverPoster) string {
+	s.Post(url, map[string]string{
+		"contents": "another fade baidu.com",
+	})
+	return s.Get(url)
 }
 
 func main() {
 	var r Retriever
 
 	//值类型，即可使用值类型也可以使用指针类型
-	r = mock.Retriever{"hello word"}
+	retriever := &mock.Retriever{"hello word"}
+	r = retriever
 	inspect(r)
 
 	/*
@@ -35,7 +63,7 @@ func main() {
 	inspect(r)
 
 	//Type assertion， 查看指针变量
-	if mockRetriever, ok := r.(mock.Retriever); ok {
+	if mockRetriever, ok := r.(*mock.Retriever); ok {
 		fmt.Println(mockRetriever.Contents)
 	} else {
 		fmt.Println("not a mock retriever")
@@ -43,12 +71,14 @@ func main() {
 	//realRetriever := r.(*real.Retriever) // .(type)获取具体类型
 	//fmt.Println(realRetriever.Timeout)
 
-	//fmt.Println(download(r))
+	//fmt.Println(download(r)
+	fmt.Println("Try a session")
+	fmt.Println(session(retriever))
 }
 
 func inspect(r Retriever) {
 	switch v := r.(type) {
-	case mock.Retriever:
+	case *mock.Retriever:
 		fmt.Println("Contents:", v.Contents)
 	case *real.Retriever:
 		fmt.Println("UserAgent:", v.UserAgent)
