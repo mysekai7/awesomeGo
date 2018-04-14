@@ -33,7 +33,7 @@ func errWrapper(handler appHandler) func(
 			if userErr, ok := err.(userError); ok { //.() Type Assertion判断类型
 				http.Error(writer,
 					userErr.Message(),
-					http.StatusBadRequest)
+					http.StatusBadRequest) //显示在header的状态码
 				return
 			}
 
