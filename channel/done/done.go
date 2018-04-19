@@ -5,8 +5,7 @@ import (
 	"sync"
 )
 
-func doWork(id int,
-	w worker) {
+func doWork(id int, w worker) {
 	for n := range w.in { //判断chan是否已close
 		fmt.Printf("worker %d received %c \n",
 			id, n)
