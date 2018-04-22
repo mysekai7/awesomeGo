@@ -38,13 +38,17 @@ func createWorker(id int, wg *sync.WaitGroup) worker {
 func chanDemo() {
 	var wg sync.WaitGroup
 
+	//chan是blocking的，go func有点类似异步线程
+
 	var workers [10]worker
 	for i := 0; i < 10; i++ {
 		workers[i] = createWorker(i, &wg)
 	}
+	//每个block收完后，必须有接收，否则不能发送第二次↓
 
 	wg.Add(20)
 
+	//第一次未处理时，不能再发送第二次，必须先收。
 	for i, worker := range workers {
 		worker.in <- 'a' + i
 	}
