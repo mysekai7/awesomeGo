@@ -1,7 +1,7 @@
 package main
 
 import (
-	"awesomeProject1/errorhanding/filelistserver/filelisting"
+	"awesomeGo/errorhanding/filelistserver/filelisting"
 	"net/http"
 	"os"
 

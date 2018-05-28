@@ -1,0 +1,78 @@
+GET http://localhost:8081/v3/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T122715.200.txt
+
+###
+
+GET http://localhost:8081/v2/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T122708.200.txt
+
+###
+
+GET http://localhost:8081/v0/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T122700.200.txt
+
+###
+
+GET http://localhost:8081/v1/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T122639.200.txt
+
+###
+
+GET http://localhost:8080/v1/hello
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/v1/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T121943.200.txt
+
+###
+
+GET http://localhost:8080/v0/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T121928.200.txt
+
+###
+
+GET http://localhost:8080/v1/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T121825.200.txt
+
+###
+
+GET http://localhost:8080/v1/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T121823.200.txt
+
+###
+
+GET http://localhost:8080/v0/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-21T121817.200.txt
+
+###
+

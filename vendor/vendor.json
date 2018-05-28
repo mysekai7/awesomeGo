@@ -1,0 +1,25 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "kpDdn8FTTpe3DOSH7qDyfvIIzrY=",
+			"path": "github.com/golang/mock/gomock",
+			"revision": "22bbf0ddf08105dfa364d0a2fa619dfa71014af5",
+			"revisionTime": "2018-05-03T01:48:54Z"
+		},
+		{
+			"checksumSHA1": "+k58oVsPE5qcJOpN7om0nezEE1o=",
+			"path": "github.com/gpmgo/gopm/modules/log",
+			"revision": "7edb73a0f439c016ee40b6608bc271c7fc4462e9",
+			"revisionTime": "2017-07-27T21:13:37Z"
+		},
+		{
+			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
+			"path": "golang.org/x/net/context",
+			"revision": "f73e4c9ed3b7ebdd5f699a16a880c2b1994e50dd",
+			"revisionTime": "2018-05-08T00:58:03Z"
+		}
+	],
+	"rootPath": "awesomeGo"
+}
