@@ -9,7 +9,7 @@ func main() {
 
 	waitNum := 4
 
-	done := make(chan bool, waitNum)
+	done := make(chan bool)
 	br := barrier.NewBarrier(waitNum)
 
 	for i := 0; i < waitNum; i++ {
